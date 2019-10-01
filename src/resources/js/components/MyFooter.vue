@@ -3,7 +3,7 @@
     color="secondary"
     app
   >
-    <span class="white--text"><strong>Be Yourself</strong> &copy; 2019</span>
+    <span class="white--text"><strong>KaitoHealth</strong> &copy; 2019</span>
   </v-footer>
 </template>
 

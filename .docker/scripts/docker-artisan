@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+docker exec -w /var/www -it php-fpm php artisan $@
