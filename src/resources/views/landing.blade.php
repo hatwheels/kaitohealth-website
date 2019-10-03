@@ -35,7 +35,7 @@
                     @endauth
                 </div>
             @endif
-            <div id="app">
+            <div id="home">
                 <app></app>
             </div>
         </div>

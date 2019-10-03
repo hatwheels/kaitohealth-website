@@ -1,7 +1,7 @@
 <template>
   <v-footer
-    color="primary"
     app
+    color="primary"
   >
     <span class="white--text"><strong>KaitoHealth</strong> &copy; 2019</span>
   </v-footer>

@@ -1,15 +1,31 @@
 <template>
   <v-app>
     <StickyHeader/>
-    <v-img
-      class="m-auto"
-      :src='require("../../../public/images/undraw_medicine_b1ol.svg")'
-      width="800"
-      contain
-      >
-    </v-img>
+
+    <v-content>
+      <v-container fluid>
+        
+        <v-card
+          v-for="(img, i) in images" :key="i"
+          class="d-flex flex-column" 
+          color="transparent"
+          flat
+          min-height="700"
+        >
+          <v-img
+            class="m-auto"
+            :id="img.id"
+            :src="img.url"
+            contain
+            max-height="500"
+          >
+          </v-img>
+        </v-card>
+
+      </v-container>
+    </v-content>
+
     <MyFooter/>
-    <v-btn text color="accent">Home</v-btn>
   </v-app>
 </template>
 
@@ -24,5 +40,23 @@
       StickyHeader,
       MyFooter,
     },
+
+    data () {
+      return {
+        images: [
+          { id: 'vision', url: require("../../../public/images/undraw_medicine.svg") },
+          { id: 'team', url: require("../../../public/images/undraw_personal_information.svg") }
+        ]
+      }
+    }
   };
 </script>
+
+<style>
+  a:focus,
+  button:focus,
+  input:focus,
+  textarea:focus {
+    outline: none;
+  }
+</style>
