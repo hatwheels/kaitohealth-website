@@ -1,7 +1,8 @@
 import Vue from 'vue';
 import Vuetify from 'vuetify';
 import '@mdi/font/css/materialdesignicons.css';
-import colors from 'vuetify/lib/util/colors'
+import colors from 'vuetify/lib/util/colors';
+import Scroll from 'vuetify/es5/directives';
 
 Vue.use(Vuetify);
 
@@ -22,4 +23,7 @@ export default new Vuetify({
   icons: {
     iconfont: 'mdi',
   },
+  directives: {
+    Scroll
+  }
 });

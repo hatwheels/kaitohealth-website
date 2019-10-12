@@ -3,6 +3,7 @@
     <StickyHeader/>
 
     <v-content>
+
       <v-container fluid>
         
         <v-card
@@ -23,6 +24,7 @@
         </v-card>
 
       </v-container>
+
     </v-content>
 
     <MyFooter/>
@@ -46,9 +48,10 @@
         images: [
           { id: 'vision', url: require("../../../public/images/undraw_medicine.svg") },
           { id: 'team', url: require("../../../public/images/undraw_personal_information.svg") }
-        ]
+        ],
       }
-    }
+    },
+
   };
 </script>
 

@@ -1,8 +1,8 @@
 <template>
     <v-app-bar
       app
-      elevation="6"
-      color="secondary"
+      :elevation="scrollYposition > scrollMaxY ? maxElevation : minElevation"
+      :color="scrollYposition > scrollMaxY ? 'secondary' : 'transparent'"
     >
       <v-img
         :src='require("../../../public/images/KaitoHealthLogoTransparentAlt.png")'
@@ -54,6 +54,14 @@
 
 <script>
   export default {
+    mounted () {
+      window.addEventListener('scroll', this.onScroll)
+    },
+
+    beforeDestroy () {
+      window.removeEventListener('scroll', this.onScroll)
+    },
+
     data () {
       return {
         aboutItems: [
@@ -66,8 +74,18 @@
           { title: 'Collaborate with us' },
           { title: 'Surveys' },
         ],
+        scrollYposition: 0,
+        scrollMaxY: 10,
+        maxElevation: 1,
+        minElevation: 0,
       }
     },
+
+    methods: {
+      onScroll () {
+        this.scrollYposition = window.pageYOffset || document.documentElement.scrollTop
+      }
+    }
   }
 </script>
 
