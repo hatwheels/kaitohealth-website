@@ -24,7 +24,7 @@
             </v-btn>
           </template>
           <v-list rounded>
-            <v-list-item v-for="(item, i) in aboutItems" :key="i" v-ripple="{ class: 'primary--text' }" href="#">
+            <v-list-item v-for="(item, i) in aboutItems" :key="i" v-ripple="{ class: 'primary--text' }" @click="$vuetify.goTo(item.tag)">
               <v-list-item-title class="accent--text">{{ item.title }}</v-list-item-title>
             </v-list-item>
           </v-list>
@@ -38,7 +38,7 @@
             </v-btn>
           </template>
           <v-list rounded tile>
-            <v-list-item v-for="(item, i) in futureItems" :key="i" v-ripple="{ class: 'primary--text' }" @click={}>
+            <v-list-item v-for="(item, i) in futureItems" :key="i" v-ripple="{ class: 'primary--text' }" @click="$vuetify.goTo(item.tag)">
               <v-list-item-title class="accent--text">{{ item.title }}</v-list-item-title>
             </v-list-item>
           </v-list>
@@ -65,14 +65,14 @@
     data () {
       return {
         aboutItems: [
-          { title: 'The vision' },
-          { title: 'The App' },
-          { title: 'Blockchain Technology' },
+          { title: 'The vision', tag: '#vision' },
+          { title: 'The App', tag: '#app' },
+          { title: 'Blockchain Technology', tag: '#blockchain' },
         ],
         futureItems: [
-          { title: 'Learn More' },
-          { title: 'Collaborate with us' },
-          { title: 'Surveys' },
+          { title: 'Learn More', tag: '#more' },
+          { title: 'Collaborate with us', tag:'#collaborate' },
+          { title: 'Surveys', tag:'#survey' },
         ],
         scrollYposition: 0,
         scrollMaxY: 10,
