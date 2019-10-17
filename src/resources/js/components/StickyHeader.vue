@@ -14,7 +14,7 @@
       <div class="flex-grow-1"></div>
 
       <v-toolbar-items>
-        <v-btn text color="accent" :ripple="{ class:'primary--text' }" @click="$vuetify.goTo('#home')">Home</v-btn>
+        <v-btn text color="accent" :ripple="{ class:'primary--text' }" @click="$vuetify.goTo('#app')">Home</v-btn>
 
         <v-menu bottom left :offset-y="true" transition="slide-x-transition">
           <template v-slot:activator="{ on }">
@@ -44,9 +44,9 @@
           </v-list>
         </v-menu>
 
-        <v-btn text color="accent" :ripple="{ class:'primary--text' }" @click="$vuetify.goTo('#team')">The Team</v-btn>
+        <!-- <v-btn text color="accent" :ripple="{ class:'primary--text' }" @click="$vuetify.goTo('#team')">The Team</v-btn> -->
 
-        <v-btn text color="accent" :ripple="{ class:'primary--text' }" @click="$vuetify.goTo('#contact')">Contact</v-btn>
+        <!-- <v-btn text color="accent" :ripple="{ class:'primary--text' }" @click="$vuetify.goTo('#contact')">Contact</v-btn> -->
       </v-toolbar-items>
 
     </v-app-bar>
@@ -66,13 +66,13 @@
       return {
         aboutItems: [
           { title: 'The vision', tag: '#vision' },
-          { title: 'The App', tag: '#app' },
+          { title: 'The App', tag: '#application' },
           { title: 'Blockchain Technology', tag: '#blockchain' },
         ],
         futureItems: [
-          { title: 'Learn More', tag: '#more' },
+          { title: 'Learn More', tag: '#learnmore' },
           { title: 'Collaborate with us', tag:'#collaborate' },
-          { title: 'Surveys', tag:'#survey' },
+          // { title: 'Surveys', tag:'#surveys' },
         ],
         scrollYposition: 0,
         scrollMaxY: 10,

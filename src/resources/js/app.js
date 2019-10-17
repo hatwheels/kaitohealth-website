@@ -27,6 +27,8 @@ window.Vuetify = require('vuetify');
 Vue.component('app', require('./components/App.vue').default);
 Vue.component('sticky-header', require('./components/StickyHeader.vue').default);
 Vue.component('my-footer', require('./components/MyFooter.vue').default);
+Vue.component('about', require('./components/About.vue').default);
+Vue.component('future', require('./components/Future.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -36,7 +38,7 @@ Vue.component('my-footer', require('./components/MyFooter.vue').default);
 
 const app = new Vue({
     vuetify,
-    el: '#home',
+    el: '#app',
 });
 
 export default app;
