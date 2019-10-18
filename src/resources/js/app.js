@@ -30,7 +30,6 @@ Vue.component('my-footer', require('./components/MyFooter.vue').default);
 Vue.component('about', require('./components/About.vue').default);
 Vue.component('future', require('./components/Future.vue').default);
 
-
 if (process.env.MIX_ENV_MODE === 'production') {
     Vue.config.devtools = false;
     Vue.config.debug = false;

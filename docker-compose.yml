@@ -1,4 +1,4 @@
-version: '3'
+version: '3.3'
 services:
   php-fpm:
     container_name: php_kaitohealth
@@ -12,15 +12,21 @@ services:
     image: mysql:5.7
     container_name: mysql_kaitohealth
     restart: unless-stopped
+    tty: true
+    secrets:
+      - dbu
+      - dbpw
     environment:
-      MYSQL_DATABASE: homestead
-      MYSQL_USER: homestead
-      MYSQL_PASSWORD: secret
-      MYSQL_ROOT_PASSWORD: secret
-      SERVICE_TAGS: dev
+      MYSQL_DATABASE: basic
+      MYSQL_USER: /run/secrets/dbu
+      MYSQL_PASSWORD: /run/secrets/dbpw
+      MYSQL_ROOT_PASSWORD: /run/secrets/dbpw
+      SERVICE_TAGS: prod
       SERVICE_NAME: mysql
     ports:
       - "3306:3306"
+    volumes:
+      - dbdata:/var/lib/mysql
     networks:
       - laravel
 
@@ -43,3 +49,13 @@ services:
 networks:
   laravel:
     driver: bridge
+
+volumes:
+  dbdata:
+    driver: local
+
+secrets:
+  dbu:
+    file: ./.docker/secrets/dbu.txt
+  dbpw:
+    file: ./.docker/secrets/dbpw.txt
