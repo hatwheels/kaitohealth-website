@@ -30,6 +30,13 @@ Vue.component('my-footer', require('./components/MyFooter.vue').default);
 Vue.component('about', require('./components/About.vue').default);
 Vue.component('future', require('./components/Future.vue').default);
 
+
+if (process.env.MIX_ENV_MODE === 'production') {
+    Vue.config.devtools = false;
+    Vue.config.debug = false;
+    Vue.config.silent = true;
+}
+
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
