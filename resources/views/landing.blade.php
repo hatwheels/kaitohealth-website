@@ -4,7 +4,9 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         
-        <title>KaitoHealth</title>
+        <title>KaitoHealth - Sail Safely over an Ocean of Health Data</title>
+
+        <meta name="description" content="Safe and secure Electronic Health Records. Access securely your health record anyplace, anytime. Share it safely with the right person of your choice - doctors, hospitals, clinics, diagnostic centers.">
 
         <!-- Scripts -->
         <script src="{{ mix('js/app.js') }}" defer></script>
