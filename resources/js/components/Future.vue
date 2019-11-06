@@ -1,6 +1,6 @@
 <template>
     <div class="py-12">
-        <v-row v-if="$vuetify.breakpoint.mdAndUp" justify="space-around" align="center">
+        <v-row v-if="$vuetify.breakpoint.smAndUp" justify="space-around" align="start">
             <v-col cols=5 justify="center" align="center">
                 <v-card
                     id="learnmore"
@@ -11,11 +11,13 @@
                         <v-avatar size=60>
                             <v-img :src="learnmore.url" contain/>
                         </v-avatar>
-                        <p class="mb-0 hidden-md-only font-weight-bold display-2 text-justify">{{ learnmore.title }}</p>
-                        <p class="mb-0 hidden-lg-and-up font-weight-bold display-1 text-justify">{{ learnmore.title }}</p>
+                        <p class="mb-0 hidden-md-and-down font-weight-bold display-1 text-justify">{{ learnmore.title }}</p>
+                        <p class="mb-0 hidden-lg-and-up hidden-sm-only font-weight-bold headline text-justify">{{ learnmore.title }}</p>
+                        <p class="mb-0 hidden-md-and-up font-weight-bold font-weight-regular title text-justify">{{ learnmore.title }}</p>
                     </v-card-title>
-                    <v-card-text class="hidden-md-only accent--text headline text-justify" v-html="learnmore.text"/>
-                    <v-card-text class="hidden-lg-and-up accent--text title text-justify" v-html="learnmore.text"/>
+                    <v-card-text class="hidden-md-and-down accent--text font-weight-regular title text-justify" v-html="learnmore.text"/>
+                    <v-card-text class="hidden-lg-and-up hidden-sm-only accent--text body-1 text-justify" v-html="learnmore.text"/>
+                    <v-card-text class="hidden-md-and-up accent--text body-2 text-justify" v-html="learnmore.text"/>
                     <v-text-field
                         prepend-inner-icon="mdi-email"
                         append-outer-icon="mdi-send"
@@ -35,17 +37,19 @@
                         <v-avatar size=60>
                             <v-img :src="collaborate.url" contain/>
                         </v-avatar>
-                        <p class="mb-0 hidden-md-only font-weight-bold display-2 text-justify">{{ collaborate.title }}</p>
-                        <p class="mb-0 hidden-lg-and-up font-weight-bold display-1 text-justify">{{ collaborate.title }}</p>
+                        <p class="mb-0 hidden-md-and-down font-weight-bold display-1 text-justify">{{ collaborate.title }}</p>
+                        <p class="mb-0 hidden-lg-and-up hidden-sm-only font-weight-bold headline text-justify">{{ collaborate.title }}</p>
+                        <p class="mb-0 hidden-md-and-up font-weight-bold font-weight-regular title text-justify">{{ collaborate.title }}</p>
                     </v-card-title>
-                    <v-card-text class="hidden-md-only accent--text headline text-justify" v-html="collaborate.text"/>
-                    <v-card-text class="hidden-lg-and-up accent--text title text-justify" v-html="collaborate.text"/>
+                    <v-card-text class="hidden-md-and-down accent--text font-weight-regular title text-justify" v-html="collaborate.text"/>
+                    <v-card-text class="hidden-lg-and-up hidden-sm-only accent--text body-1 text-justify" v-html="collaborate.text"/>
+                    <v-card-text class="hidden-md-and-up accent--text body-2 text-justify" v-html="collaborate.text"/>
                 </v-card>
             </v-col>
         </v-row>
         <div v-else>
             <v-row justify="space-around" align="center">
-                <v-col justify="center" align="center">
+                <v-col cols=10 justify="center" align="center">
                     <v-card
                         id="learnmore"
                         flat
@@ -58,9 +62,9 @@
                                     contain
                                 />
                             </v-avatar>
-                            <v-card-title class="accent--text headline font-weight-bold">{{ learnmore.title }}</v-card-title>
+                            <v-card-title class="accent--text font-weight-regular title font-weight-bold">{{ learnmore.title }}</v-card-title>
                         </v-row>
-                        <v-card-text class="accent--text body-1 text-justify" v-html="learnmore.text"/>
+                        <v-card-text class="accent--text body-2 text-justify" v-html="learnmore.text"/>
                         <v-card width="400" color="transparent" flat>
                             <v-text-field
                                 class="px-4"
@@ -75,7 +79,7 @@
                 </v-col>
             </v-row>
             <v-row justify="center" align="center">
-                <v-col justify="center" align="center">
+                <v-col cols=10 justify="center" align="center">
                     <v-card
                         id="colla"
                         flat
@@ -88,9 +92,9 @@
                                     contain
                                 />
                             </v-avatar>
-                            <v-card-title class="accent--text headline font-weight-bold">{{ collaborate.title }}</v-card-title>
+                            <v-card-title class="accent--text font-weight-regular title font-weight-bold">{{ collaborate.title }}</v-card-title>
                         </v-row>
-                        <v-card-text class="accent--text body-1 text-justify" v-html="collaborate.text"/>
+                        <v-card-text class="accent--text body-2 text-justify" v-html="collaborate.text"/>
                     </v-card>
                 </v-col>
             </v-row>

@@ -20,7 +20,7 @@
                     <v-card-title class="hidden-md-and-down accent--text display-2 font-weight-bold">{{ img.title }}</v-card-title>
                     <v-card-text class="hidden-md-and-down text-justify headline" v-html="img.text"/>
                     <v-card-title class="hidden-lg-and-up hidden-sm-and-down accent--text display-1 font-weight-bold">{{ img.title }}</v-card-title>
-                    <v-card-text class="hidden-lg-and-up hidden-sm-and-down text-justify title" v-html="img.text"/>
+                    <v-card-text class="hidden-lg-and-up hidden-sm-and-down text-justify font-weight-regular title" v-html="img.text"/>
                     <v-card-title class="hidden-md-and-up hidden-xs-only accent--text headline font-weight-bold">{{ img.title }}</v-card-title>
                     <v-card-text class="hidden-md-and-up hidden-xs-only text-justify body-1" v-html="img.text"/>
                     <v-row class="hidden-sm-and-up" justify="center" align="center">
