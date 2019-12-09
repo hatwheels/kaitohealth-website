@@ -10,7 +10,7 @@
                         class="m-auto"
                         :src="img.url"
                         contain
-                        :max-height="widthImg()"
+                        :height="imgHeight"
                     >
                     </v-img>
                 </v-card>
@@ -50,12 +50,20 @@ export default {
         ],
       }
     },
-
+    computed: {
+        imgHeight () {
+            if (this.$vuetify.breakpoint.name == 'sm') {
+                return '20rem'
+            } else if (this.$vuetify.breakpoint.name == 'md') {
+                return '24rem'
+            } else if (this.$vuetify.breakpoint.name == 'lg') {
+                return '30rem'
+            } else if (this.$vuetify.breakpoint.name == 'xl') {
+                return '32.1rem'
+            }
+        }
+    },
     methods: {
-        widthImg () {
-            return this.$vuetify.breakpoint.lgAndUp ? 500 : 120
-        },
-
         colsImg () {
             return this.$vuetify.breakpoint.lgAndUp ? 4 : 3
         },

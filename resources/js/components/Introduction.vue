@@ -7,9 +7,10 @@
             flat
         >
             <v-img
-            class="m-auto"
-            :src="require('../../../public/images/undraw_medicine.svg')"
-            contain
+                class="m-auto"
+                :height="imgHeight"
+                :src="require('../../../public/images/undraw_medicine.svg')"
+                contain
             >
             </v-img>
         </v-card>
@@ -45,7 +46,19 @@
 
 <script>
 export default {
-    
+    computed: {
+        imgHeight () {
+            if (this.$vuetify.breakpoint.name == 'sm') {
+                return '20rem'
+            } else if (this.$vuetify.breakpoint.name == 'md') {
+                return '24rem'
+            } else if (this.$vuetify.breakpoint.name == 'lg') {
+                return '30rem'
+            } else if (this.$vuetify.breakpoint.name == 'xl') {
+                return '32.1rem'
+            }
+        }
+    }
 }
 </script>
 
